@@ -1,0 +1,28 @@
+{
+  "name": "persona-card",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "知乎黑客松 2026 项目三（跨次元游乐场）· 知乎人格卡 / 赛博灵魂画像",
+  "scripts": {
+    "dev": "concurrently -n web,api -c cyan,magenta \"vite\" \"node server/server.mjs\"",
+    "dev:web": "vite",
+    "dev:server": "node server/server.mjs",
+    "build": "vite build",
+    "preview": "vite preview",
+    "start": "node server/server.mjs"
+  },
+  "dependencies": {
+    "html-to-image": "^1.11.11",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.20",
+    "concurrently": "^9.1.0",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.17",
+    "vite": "^5.4.11"
+  }
+}
