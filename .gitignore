@@ -1,0 +1,23 @@
+# ===== WorkBuddy 内部目录（含记忆/配置，绝不提交） =====
+.workbuddy/
+.workbuddy
+
+# ===== 密钥 / 环境变量 =====
+# 子目录 zhihu-api-demo/.env 已由该目录自己的 .gitignore 忽略；
+# 这里再在根层兜底，防止任何位置的 .env 被提交
+.env
+.env.*
+!.env.example
+
+# ===== 依赖 / 构建产物 =====
+node_modules/
+dist/
+build/
+*.log
+
+# ===== 操作系统 / 编辑器杂项 =====
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/

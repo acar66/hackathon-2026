@@ -1,0 +1,15 @@
+{
+  "name": "zhihu-hackathon-api-demo",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "知乎开放平台 API 接入示例（chat/completions + 内容接口），用于知乎黑客松 2026 校园新锐季 · 项目三 跨次元游乐场",
+  "scripts": {
+    "start": "node server.mjs",
+    "dev": "node --watch server.mjs",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

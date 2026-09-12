@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>跨次元游乐场 · 知乎 AI NPC Demo</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div>
+        <h1>跨次元游乐场</h1>
+        <p class="subtitle">知乎黑客松 2026 · 项目三 · OpenAI Next Credits（OpenAI 兼容）接入 Demo</p>
+      </div>
+      <label class="model-pick">
+        模型
+        <select id="model">
+          <option value="gpt-4o-mini">快速 (gpt-4o-mini)</option>
+          <option value="gpt-4o">标准 (gpt-4o)</option>
+          <option value="gpt-5">最强 (gpt-5)</option>
+        </select>
+      </label>
+    </header>
+
+    <section id="chat" class="chat" aria-live="polite"></section>
+
+    <div id="status" class="status" hidden></div>
+
+    <footer class="composer">
+      <textarea id="input" rows="2" placeholder="对这位知乎 NPC 说点什么…（Enter 发送，Shift+Enter 换行）"></textarea>
+      <button id="send">发送</button>
+    </footer>
+    <p class="hint">配好 <code>.env</code> 的 <code>LLM_API_KEY</code> 后即可真实调用 OpenAI Next Credits；未配置时接口会返回清晰错误。</p>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>
