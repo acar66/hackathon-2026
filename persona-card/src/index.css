@@ -83,3 +83,126 @@ body {
 /* 隐藏滚动条但保留滚动（移动端答题更干净） */
 .no-scrollbar::-webkit-scrollbar { display: none; }
 .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* 四维滑块（按轴色染色） */
+.dim-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 6px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.12);
+  outline: none;
+  cursor: pointer;
+}
+.dim-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 9999px;
+  background: var(--c, #7c5cff);
+  border: 2px solid #0b0e14;
+  box-shadow: 0 0 10px var(--c, #7c5cff);
+}
+.dim-slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 9999px;
+  background: var(--c, #7c5cff);
+  border: 2px solid #0b0e14;
+  box-shadow: 0 0 10px var(--c, #7c5cff);
+}
+
+/* ===== 刘看山舞台 ===== */
+.lk-stage {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* 默认无背景，避免看起来像“黑红框”；如需场景色在 scenes.js 里单独设 bg */
+  background: transparent;
+}
+/* 狐狸本体：静止、居中、无浮动、无黑框，作为卡片主体放大 */
+.lk-fox {
+  position: relative;
+  z-index: 2;
+  width: 92%;
+  height: 92%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.lk-character {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 16px rgba(0, 0, 0, 0.35));
+}
+.lk-placeholder {
+  width: 70%;
+  height: 70%;
+  border: 2px dashed rgba(255, 255, 255, 0.4);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 13px;
+  line-height: 1.6;
+}
+.lk-prop {
+  position: absolute;
+  pointer-events: none;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
+  transform-origin: center center;
+}
+.lk-prop-img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* 通用小物动效 */
+.float-y { animation: lk-float-y 3s ease-in-out infinite; }
+@keyframes lk-float-y { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+.float-slow { animation: lk-float-y 5s ease-in-out infinite; }
+.rise { animation: lk-rise 3.4s ease-in-out infinite; }
+@keyframes lk-rise { 0%,100%{transform:translateY(6px)} 50%{transform:translateY(-10px)} }
+.rise-delay { animation: lk-rise 3.4s ease-in-out infinite 1.2s; }
+.spin { animation: lk-spin 6s linear infinite; }
+.spin-slow { animation: lk-spin 12s linear infinite; }
+@keyframes lk-spin { to { transform: rotate(360deg); } }
+.sway { animation: lk-sway 3.2s ease-in-out infinite; }
+@keyframes lk-sway { 0%,100%{transform:rotate(-5deg)} 50%{transform:rotate(5deg)} }
+.bounce { animation: lk-bounce 1.8s ease-in-out infinite; }
+@keyframes lk-bounce { 0%,100%{transform:translateY(0)} 40%{transform:translateY(-14px)} 60%{transform:translateY(2px)} }
+.blink { animation: lk-blink 2.4s ease-in-out infinite; }
+@keyframes lk-blink { 0%,100%{opacity:1} 50%{opacity:0.35} }
+.flash { animation: lk-flash 2.6s ease-in-out infinite; }
+@keyframes lk-flash { 0%,90%,100%{opacity:1} 94%{opacity:0.3} }
+.flicker { animation: lk-flicker 0.5s steps(2) infinite; }
+@keyframes lk-flicker { 0%{transform:scaleY(1)} 50%{transform:scaleY(0.86)} 100%{transform:scaleY(1)} }
+.shake { animation: lk-shake 0.35s linear infinite; }
+@keyframes lk-shake { 0%,100%{transform:rotate(-3deg)} 50%{transform:rotate(3deg)} }
+.pulse { animation: lk-pulse 2s ease-in-out infinite; }
+@keyframes lk-pulse { 0%,100%{transform:scale(1);opacity:0.85} 50%{transform:scale(1.12);opacity:1} }
+.scan { animation: lk-scan 2.6s linear infinite; transform-origin: 50% 50%; }
+@keyframes lk-scan { 0%{transform:rotate(0)} 100%{transform:rotate(360deg)} }
+
+/* 背景特效层 */
+.lk-effect { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
+.lk-effect.gold-glow { background: radial-gradient(circle at 50% 38%, rgba(245,181,10,0.22), transparent 60%); }
+.lk-effect.blue-glow { background: radial-gradient(circle at 50% 38%, rgba(59,130,246,0.22), transparent 60%); }
+.lk-effect.steel { background: radial-gradient(circle at 50% 38%, rgba(138,148,166,0.18), transparent 60%); }
+.lk-effect.ink { background: radial-gradient(circle at 50% 38%, rgba(124,92,255,0.16), transparent 60%); }
+.lk-effect.mist { background: radial-gradient(circle at 50% 60%, rgba(255,255,255,0.35), transparent 55%); }
+.lk-effect.soft { background: radial-gradient(circle at 50% 38%, rgba(255,155,179,0.22), transparent 60%); }
+.lk-effect.warm { background: radial-gradient(circle at 50% 38%, rgba(255,180,90,0.20), transparent 60%); }
+.lk-effect.aura { background: conic-gradient(from 0deg, rgba(59,130,246,0.18), rgba(124,92,255,0.18), rgba(34,211,238,0.18), rgba(59,130,246,0.18)); opacity: 0.8; }
+.lk-effect.spark::after {
+  content: '✦ ✧ ✦'; position: absolute; top: 20%; left: 30%;
+  color: #ffb347; font-size: 14px; animation: lk-blink 1.2s ease-in-out infinite;
+}
