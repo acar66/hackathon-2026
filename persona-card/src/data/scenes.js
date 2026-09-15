@@ -107,15 +107,16 @@ export const SCENES = {
     image: '/liukanshan/hearth-keeper.jpg',
     bg: 'radial-gradient(circle at 50% 30%, #e8f5d6, #c4dea0)',
     effect: 'warm',
-    // 主体图为绿色纯色背景，但白色围裙/狐狸边缘接近背景光，tolerance 不能太高，否则会把浅色边缘也抠掉。
+    // v5 洪水填充后：只抠与画面边缘连通的背景，狐狸身上的绿丝巾/绿袖口/绿鞋不再被误抠。
+    // 因此 tolerance 可以回升，保证带渐变的绿色背景被完整抠掉。
     autoKey: true,
-    tolerance: 0.18,
+    tolerance: 0.24,
     edge: 0.12,
-    spill: 0.35,
+    spill: 0.5,
     propImages: [
       // 蒸笼厨具：烟火气小物，放在狐狸身后（z:1），让狐狸主体站在道具前面。
-      // 小物图同样是绿色背景，参数放低，避免蒸笼/炒锅边缘被吃掉。
-      { src: '/liukanshan/props/hearth-keeper.png', x: '8%', y: '54%', size: '84%', h: '44%', objectPosition: 'center bottom', anim: 'float-y', z: 1, autoKey: true, tolerance: 0.18, edge: 0.12, spill: 0.35 },
+      // 小物图同为绿色背景，v5 洪水填充后内部绿色灶台把手等不再误伤，阈值回升保证背景抠净。
+      { src: '/liukanshan/props/hearth-keeper.png', x: '8%', y: '54%', size: '84%', h: '44%', objectPosition: 'center bottom', anim: 'float-y', z: 1, autoKey: true, tolerance: 0.24, edge: 0.12, spill: 0.5 },
     ],
   },
   // 10 末世硬核党 · 疯批爆裂型
