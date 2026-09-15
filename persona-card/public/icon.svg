@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="知乎人格卡">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2E9BFF"/>
+      <stop offset="0.55" stop-color="#0A84FF"/>
+      <stop offset="1" stop-color="#0B4FC4"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#E4EFFF"/>
+    </linearGradient>
+    <linearGradient id="fur" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#F0F5FC"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 底：知乎蓝圆角方 -->
+  <rect width="512" height="512" rx="112" fill="url(#bg)"/>
+
+  <!-- 人格卡底座 -->
+  <g transform="rotate(-5 256 320)">
+    <rect x="112" y="262" width="288" height="192" rx="32" fill="url(#card)"/>
+    <!-- 卡片标题条 -->
+    <rect x="152" y="298" width="132" height="20" rx="10" fill="#0A84FF" opacity="0.9"/>
+    <rect x="152" y="330" width="208" height="14" rx="7" fill="#C9D9F2"/>
+    <rect x="152" y="356" width="160" height="14" rx="7" fill="#D8E4F7"/>
+    <!-- 四维色点：行动红 / 理性蓝 / 自由黄 / 共情绿 -->
+    <circle cx="164" cy="412" r="16" fill="#FF5A5F"/>
+    <circle cx="216" cy="412" r="16" fill="#3B82F6"/>
+    <circle cx="268" cy="412" r="16" fill="#F5B50A"/>
+    <circle cx="320" cy="412" r="16" fill="#22C55E"/>
+  </g>
+
+  <!-- 刘看山：白狐头 -->
+  <g>
+    <!-- 耳朵 -->
+    <path d="M182 168 L200 100 L246 148 Z" fill="url(#fur)"/>
+    <path d="M330 168 L312 100 L266 148 Z" fill="url(#fur)"/>
+    <path d="M193 160 L202 120 L228 150 Z" fill="#FFC9CF"/>
+    <path d="M319 160 L310 120 L284 150 Z" fill="#FFC9CF"/>
+    <!-- 脸 -->
+    <ellipse cx="256" cy="222" rx="96" ry="82" fill="url(#fur)"/>
+    <!-- 腮红 -->
+    <ellipse cx="196" cy="248" rx="18" ry="11" fill="#FFD7DD" opacity="0.9"/>
+    <ellipse cx="316" cy="248" rx="18" ry="11" fill="#FFD7DD" opacity="0.9"/>
+    <!-- 眼睛 -->
+    <circle cx="224" cy="212" r="11" fill="#1F2A44"/>
+    <circle cx="288" cy="212" r="11" fill="#1F2A44"/>
+    <circle cx="228" cy="208" r="3.5" fill="#FFFFFF"/>
+    <circle cx="292" cy="208" r="3.5" fill="#FFFFFF"/>
+    <!-- 鼻子与嘴 -->
+    <path d="M256 240 l13 12 -13 11 -13 -11 Z" fill="#1F2A44"/>
+    <path d="M256 263 q-14 16 -28 4" stroke="#1F2A44" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <path d="M256 263 q14 16 28 4" stroke="#1F2A44" stroke-width="6" fill="none" stroke-linecap="round"/>
+  </g>
+</svg>
